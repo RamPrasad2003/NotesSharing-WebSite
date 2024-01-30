@@ -1,0 +1,51 @@
+{% extends 'admin_nav.html' %}
+
+{% load static %}
+{% block body%}
+<style>
+    h2,h4{
+        padding: 10px;
+    }
+    .con1{
+        background-color: lightgrey;
+        border-radius: 8px;
+    }
+    .mydiv:hover{
+        transform: translateY(-10px);
+    }
+</style>
+
+<div class="container"style="margin-top:90px;">
+    <div class="row mt-5">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="con1">
+                <h2 class="text-primary ">{{a}}</h2>
+                <a href="#"><h4 class="text-dark">Pending Notes</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="con1">
+                <h2 class="text-primary ">{{b}}</h2>
+                <a href="#"><h4 class="text-dark">Accepted Notes</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="con1">
+                <h2 class="text-primary ">{{c}}</h2>
+                <a href="#"><h4 class="text-dark">Rejected Notes</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="con1">
+                <h2 class="text-primary ">{{d}}</h2>
+                <a href="#"><h4 class="text-dark">AllNotes</h4></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="container mt-5 text-center">
+    <p style="font-size: 30pt; color:darkblue;font-weight:bold">COPYRIGHT &copy;<script>document.write(new Date().getFullYear());</script> All Rights Reserverd to <span style="color: brown;text-shadow:1px 1px black">Ram Prasad Chippada</span></p>
+</footer>
+
+{%endblock%}

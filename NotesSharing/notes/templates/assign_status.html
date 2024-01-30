@@ -1,0 +1,46 @@
+{% extends 'admin_nav.html'%}
+{% block body%}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('#example').DataTable();
+});
+</script>
+
+<div class="container mt-2" style="margin-top:90px;">
+    <h2 class="text-center">Change Status</h2>
+            <hr> 
+    <form action="" method="post">
+        {% csrf_token%}
+        <label for="">Notes ID</label>
+        <input type="text" name="notesid" class="form-control" value="{{notes.id}}" readonly>
+        <label for="">Status</label>
+        <select name="status" class="form-control " id="">
+            <option value="Accept">Accept</option>
+            <option value="Reject">Reject</option>
+        </select>
+        <br>
+        <input type="submit" class="btn btn-primary form-control">
+    </form>
+</div>
+
+{% if error == 'no' %}
+    <script>
+        alert('Updated successfully');
+        window.location = '{% url "all_notes" %}';
+    </script>
+{% endif %}
+
+{% if error == 'yes' %}
+    <script>
+        alert('something went wrong');
+    </script>
+{% endif %}
+
+{%endblock%}
